@@ -15,11 +15,14 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Engine
+  exposed-modules:     Console
+                     , Engine
                      , Engine.Encryption
                      , Engine.Decryption
   build-depends:       base >= 4.7 && < 5
                      , text
+                     , safe
+                     , mtl
   default-language:    Haskell2010
 
 executable funcryption
