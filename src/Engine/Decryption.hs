@@ -4,6 +4,7 @@ import           Data.List (foldl')
 import           Data.Text (Text)
 import qualified Data.Text as T
 
+-- | inverse function of encryptStep
 decryptStep :: Text -> Text
 decryptStep text =
   ifOdd T.init
@@ -14,6 +15,8 @@ decryptStep text =
         half = len `div` 2
         ifOdd f x = if odd then f x else x
 
+-- | call @decryptStep@ n times to decrypt text
+-- that was encrypted with the encryption algorithm n times
 decrypt :: Text -> Integer -> Text
 decrypt text n
   | n <= 0 = text
